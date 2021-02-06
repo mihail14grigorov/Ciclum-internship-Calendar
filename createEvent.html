@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>intership-test-task-create-event</title>
+    <!-- This only for multiple select-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.css"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
+    <!-- ------------------------------>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body> 
+    <div class="event-body">
+        <div class="event-block">
+            <p class="event-input">
+                Name of the event:
+            </p>
+            <input class="event-name" type="text">
+        </div>
+        <div class="event-block">
+            <p class="event-input">
+                Participants:
+            </p>
+            <style>
+                .mul-select{
+                    width: 180px;
+                    
+                }
+                .select2-container{
+                    border: 2px solid black;
+                    border-radius: 7px;
+                }
+                *, ::after, ::before {
+                    box-sizing:unset; 
+                }
+}
+            </style>
+                
+                    <div class="form-group">
+                        <select id="multiple-sel" class="mul-select" multiple="true">
+                            <option value="All members">All members</option>
+                            <option value="Maria">Maria</option>
+                            <option value="Bob">Bob</option>
+                            <option value="Alex">Alex</option>
+                        </select>
+                    </div>
+                
+            <script>
+                $(document).ready(function(){
+                    $(".mul-select").select2({
+                        placeholder:"select members",
+                        tags: true,
+                        tokenSeparators: ['/',',',','," "]
+                    });
+                })
+            </script>
+            
+        </div>
+        <div class="event-block">
+            <p class="event-input">
+                Day:
+            </p>
+            <select class="choice-member event-day" >
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                
+            </select>
+        </div>
+        <div class="event-block">
+            <p class="event-input">
+                Time:
+            </p>
+            <select class="choice-member event-time" name="" id="">
+                <option value="10:00">10:00</option>
+                <option value="11:00">11:00</option>
+                <option value="12:00">12:00</option>
+                <option value="13:00">13:00</option>
+                <option value="14:00">14:00</option>
+                <option value="15:00">15:00</option>
+                <option value="16:00">16:00</option>
+                <option value="17:00">17:00</option>
+                <option value="18:00">18:00</option>
+            </select>
+        </div>    
+    </div>
+    <div class="event-buttons">
+        <button onclick="window.location.href = './index.html'" type="submit" class="btn-event bnt-cancel">Cancel</button>
+        <button class="btn-event btn-create" type="submit">Create</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
