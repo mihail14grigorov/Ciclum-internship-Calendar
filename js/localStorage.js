@@ -13,7 +13,6 @@ if(localStorage.getItem(1) === null){
             let span = document.createElement('span');
             let spanClear = document.createElement('span');
 
-    
             span.className = 'modal-show';
             span.id = '#sign-int';
             span.innerHTML = "&times";
@@ -91,7 +90,6 @@ if(localStorage.getItem(1) === null){
         document.onkeydown = null;
     }
     
-    
     eventArr.forEach(element => {
 
         let cell = document.querySelector(element.className);
@@ -135,5 +133,4 @@ if(localStorage.getItem(1) === null){
         
         cell.style.backgroundColor = "#98FB98";
     });
-    
 }

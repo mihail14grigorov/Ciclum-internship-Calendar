@@ -8,13 +8,6 @@ document.querySelector('.event-day').onclick = () => {
 document.querySelector('.event-time').onclick = () => {
     time = document.querySelector('.event-time').value;
 }
-let personEvent = document.querySelector('.mul-select').value;
-document.querySelector('.mul-select').onclick = () => {
-    personEvent = document.querySelector('.mul-select').value;
-    console.log(personEvent);
-}
-
-
 
 const arrEvent = [];
 
