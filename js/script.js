@@ -11,6 +11,24 @@ document.querySelector('.event-time').onclick = () => {
 
 const arrEvent = [];
 
+let daysOfWeek = {};
+daysOfWeek["Monday"] = "mon";
+daysOfWeek["Tuesday"] = "tue";
+daysOfWeek["Wednesday"] = "wed";
+daysOfWeek["Thursday"] = "thu";
+daysOfWeek["Friday"] = "fri";
+
+let times = {};
+times["10:00"] = "10";
+times["11:00"] = "11";
+times["12:00"] = "12";
+times["13:00"] = "13";
+times["14:00"] = "14";
+times["15:00"] = "15";
+times["16:00"] = "16";
+times["17:00"] = "17";
+times["18:00"] = "18";
+
 let button = document.querySelector('.btn-create');
 button.onclick = () => {
     let personEvent = document.querySelector('#multiple-sel');
@@ -25,142 +43,8 @@ button.onclick = () => {
     temp.members = members;
 
     let localArr = JSON.parse(localStorage.getItem(1));
-
-    if(day === "Monday" && time === "10:00"){
-        className = '.mon-10';
-    }
-    else if(day === "Monday" && time === "11:00"){
-        className = '.mon-11';
-    }
-    else if(day === "Monday" && time === "12:00"){
-        className = '.mon-12';
-    }
-    else if(day === "Monday" && time === "13:00"){
-        className = '.mon-13';
-    }
-    else if(day === "Monday" && time === "14:00"){
-        className = '.mon-14';
-    }
-    else if(day === "Monday" && time === "15:00"){
-        className = '.mon-15';
-    }
-    else if(day === "Monday" && time === "16:00"){
-        className = '.mon-16';
-    }
-    else if(day === "Monday" && time === "17:00"){
-        className = '.mon-17';
-    }
-    else if(day === "Monday" && time === "18:00"){
-        className = '.mon-18';
-    }
-    else if(day === "Tuesday" && time === "10:00"){
-        className = '.tue-10';
-    }
-    else if(day === "Tuesday" && time === "11:00"){
-        className = '.tue-11';
-    }
-    else if(day === "Tuesday" && time === "12:00"){
-        className = '.tue-12';
-    }
-    else if(day === "Tuesday" && time === "13:00"){
-        className = '.tue-13';
-    }
-    else if(day === "Tuesday" && time === "14:00"){
-        className = '.tue-14';
-    }
-    else if(day === "Tuesday" && time === "15:00"){
-        className = '.tue-15';
-    }
-    else if(day === "Tuesday" && time === "16:00"){
-        className = '.tue-16';
-    }
-    else if(day === "Tuesday" && time === "17:00"){
-        className = '.tue-17';
-    }
-    else if(day === "Tuesday" && time === "18:00"){
-        className = '.tue-18';
-    }
-    else if(day === "Wednesday" && time === "10:00"){
-        className = '.wed-10';
-    }
-    else if(day === "Wednesday" && time === "11:00"){
-        className = '.wed-11';
-    }
-    else if(day === "Wednesday" && time === "12:00"){
-        className = '.wed-12';
-    }
-    else if(day === "Wednesday" && time === "13:00"){
-        className = '.wed-13';
-    }
-    else if(day === "Wednesday" && time === "14:00"){
-        className = '.wed-14';
-    }
-    else if(day === "Wednesday" && time === "15:00"){
-        className = '.wed-15';
-    }
-    else if(day === "Wednesday" && time === "16:00"){
-        className = '.wed-16';
-    }
-    else if(day === "Wednesday" && time === "17:00"){
-        className = '.wed-17';
-    }
-    else if(day === "Wednesday" && time === "18:00"){
-        className = '.wed-18';
-    }
-    else if(day === "Thursday" && time === "10:00"){
-        className = '.thu-10';
-    }
-    else if(day === "Thursday" && time === "11:00"){
-        className = '.thu-11';
-    }
-    else if(day === "Thursday" && time === "12:00"){
-        className = '.thu-12';
-    }
-    else if(day === "Thursday" && time === "13:00"){
-        className = '.thu-13';
-    }
-    else if(day === "Thursday" && time === "14:00"){
-        className = '.thu-14';
-    }
-    else if(day === "Thursday" && time === "15:00"){
-        className = '.thu-15';
-    }
-    else if(day === "Thursday" && time === "16:00"){
-        className = '.thu-16';
-    }
-    else if(day === "Thursday" && time === "17:00"){
-        className = '.thu-17';
-    }
-    else if(day === "Thursday" && time === "18:00"){
-        className = '.thu-18';
-    }
-    else if(day === "Friday" && time === "10:00"){
-        className = '.fri-10';
-    }
-    else if(day === "Friday" && time === "11:00"){
-        className = '.fri-11';
-    }
-    else if(day === "Friday" && time === "12:00"){
-        className = '.fri-12';
-    }
-    else if(day === "Friday" && time === "13:00"){
-        className = '.fri-13';
-    }
-    else if(day === "Friday" && time === "14:00"){
-        className = '.fri-14';
-    }
-    else if(day === "Friday" && time === "15:00"){
-        className = '.fri-15';
-    }
-    else if(day === "Friday" && time === "16:00"){
-        className = '.fri-16';
-    }
-    else if(day === "Friday" && time === "17:00"){
-        className = '.fri-17';
-    }
-    else if(day === "Friday" && time === "18:00"){
-        className = '.fri-18';
-    }
+    
+    className = "." + daysOfWeek[day] + "-" + times[time];
     
     temp.className = className;
 
